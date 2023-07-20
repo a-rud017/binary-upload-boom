@@ -41,7 +41,7 @@
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
           User <%= comments[i].createdBy%> says: "<%= comments[i].comment%>"
-          <%if(comments[i].createdById == user.id) {%>
+          <%if(comments[i].createdById == user.id || post.user == user.id) {%>
           <form
           action="/comment/deleteComment/<%= post.id %>/<%= comments[i]._id %>?_method=DELETE"
           method="POST"
